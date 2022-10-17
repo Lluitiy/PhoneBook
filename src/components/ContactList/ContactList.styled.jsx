@@ -1,10 +1,15 @@
 import styled from '@emotion/styled';
 
 export const ContactListList = styled.ul`
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+	align-items: center;
+
 	list-style-type: none;
 	padding: 0px 10px;
-	margin: 0px;
-	width: 100%;
+	margin: 0px auto;
+	width: 700px;
 `;
 
 export const ContactListItem = styled.li`
@@ -13,7 +18,18 @@ export const ContactListItem = styled.li`
 	justify-content: space-between;
 	align-items: center;
 `;
+export const ContactsWrapper = styled.div`
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	padding: 0.9rem 2rem;
+	font-size: 0.8rem;
+	border-radius: 20px;
+	border-bottom: 2px solid #008997;
+	background-color: rgba(255, 255, 255, 0.7);
 
+	width: 300px;
+`;
 export const ContactListName = styled.p`
 	width: 35%;
 	font-size: 16px;
@@ -28,22 +44,9 @@ export const ContactListNumber = styled.p`
 	color: #131a35;
 `;
 
-export const ContactListBtn = styled.button`
-	width: 30%;
-	padding: 10px;
-	color: #e5f1ff;
-	background-color: #131a35;
-	outline: none;
-	border-radius: 8px;
-	border: none;
-	transition: background-color 250ms ease-in-out;
-	cursor: pointer;
-	:hover,
-	:focus {
-		background-color: rgba(17, 201, 29, 0.863);
-	}
-`;
-
 export const Message = styled.h2`
 	text-align: center;
+	padding: 2rem 4rem;
+	border-radius: 20px;
+	background-color: rgba(255, 255, 255, 0.7);
 `;

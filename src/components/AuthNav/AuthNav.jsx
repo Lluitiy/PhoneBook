@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom';
+import { NavL, Span } from './AuthNav.styled';
 
 const AuthNavi = [
 	{ href: 'login', text: 'LogIn' },
@@ -10,9 +10,13 @@ const AuthNav = () => {
 		<>
 			<div style={{ display: 'flex', gap: `15px` }}>
 				{AuthNavi.map(({ href, text }) => (
-					<NavLink to={href} key={text}>
+					<NavL to={href} key={text}>
+						<Span></Span>
+						<Span></Span>
+						<Span></Span>
+						<Span></Span>
 						{text}
-					</NavLink>
+					</NavL>
 				))}
 			</div>
 		</>

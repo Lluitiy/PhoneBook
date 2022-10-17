@@ -1,11 +1,15 @@
+import { Container, Section } from 'components/App/App.styled';
+
 const Spinner = () => {
 	return (
-		<>
-			<div class="ring">
-				Loading
-				<span></span>
-			</div>
-		</>
+		<Section>
+			<Container>
+				<div className="ring">
+					Loading
+					<span className="spann"></span>
+				</div>
+			</Container>
+		</Section>
 	);
 };
 

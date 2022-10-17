@@ -5,9 +5,6 @@ import { setCurrentUser } from 'Redux/Auth/operations';
 import { lazy } from 'react';
 import Layout from 'layout/Layout';
 import HomePage from 'pages/HomePage/HomePage';
-// import LoginPage from 'pages/LoginPage/LoginPage';
-// import RegisterPage from 'pages/RegisterPage/RegisterPage';
-// import ContactactsPage from 'pages/ContactsPage/ContactsPage';
 import AuthSelectors from 'Redux/Auth/AuthSelectors';
 import PrivateRoutes from 'components/Private/PrivateRoutes';
 import PublicRoutes from 'components/Public/PublicRoutes';
@@ -18,6 +15,7 @@ const ContactactsPage = lazy(() => import('pages/ContactsPage/ContactsPage'));
 export const App = () => {
 	const dispatch = useDispatch();
 	const refresh = useSelector(AuthSelectors.getRefresh);
+
 	useEffect(() => {
 		dispatch(setCurrentUser());
 	}, [dispatch]);

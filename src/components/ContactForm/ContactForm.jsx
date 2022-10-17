@@ -1,16 +1,15 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { useEffect } from 'react';
 import { Report } from 'notiflix/build/notiflix-report-aio';
 import { Formik } from 'formik';
 import {
 	ContactsForm,
 	ContactsFormInput,
 	ContactsFormLabel,
-	ContactsBtn,
 	ErrorMsg,
 } from './ContactForm.styled';
 import * as yup from 'yup';
-import { addContacts, getContacts } from 'Redux/Contacts/ContactsOperations';
+import { addContacts } from 'Redux/Contacts/ContactsOperations';
+import { CommonBtn, CommonHeading } from 'components/App/App.styled';
 
 const schema = yup.object().shape({
 	name: yup
@@ -31,9 +30,6 @@ export const ContactForm = () => {
 	if (addedContact.error) {
 		alert('Ваш комп взломан переведите 10000$ на карту 7892 4552 1124 0228');
 	}
-	useEffect(() => {
-		dispatch(getContacts());
-	}, [dispatch]);
 
 	const initialValues = {
 		name: '',
@@ -71,19 +67,18 @@ export const ContactForm = () => {
 			validationSchema={schema}
 		>
 			<ContactsForm>
+				<CommonHeading>Phone Book</CommonHeading>
 				<ContactsFormLabel>
-					Name
-					<ContactsFormInput type="text" name="name" />
+					<ContactsFormInput type="text" name="name" placeholder="Name" />
 				</ContactsFormLabel>
 				<ErrorMsg name="name" component="div" />
 				<ContactsFormLabel>
-					Number
-					<ContactsFormInput type="tel" name="number" />
+					<ContactsFormInput type="tel" name="number" placeholder="Number" />
 				</ContactsFormLabel>
 				<ErrorMsg name="number" component="div" />
-				<ContactsBtn type="submit" disabled={addedContact.isLoading}>
+				<CommonBtn type="submit" disabled={addedContact.isLoading}>
 					{addedContact.isLoading ? 'Please Wait' : 'Add contact'}
-				</ContactsBtn>
+				</CommonBtn>
 			</ContactsForm>
 		</Formik>
 	);

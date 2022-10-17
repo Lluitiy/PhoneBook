@@ -1,4 +1,12 @@
 // import { Field, Form, Formik } from 'formik';
+import {
+	CommonBtn,
+	CommonForm,
+	CommonHeading,
+	CommonInput,
+	CommonLabel,
+	Section,
+} from 'components/App/App.styled';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { login } from 'Redux/Auth/operations';
@@ -39,27 +47,32 @@ const Login = () => {
 	};
 	return (
 		// <Formik initialValues={initialValue} validationSchema={schema}>
-		<form onSubmit={handleSubmit}>
-			<label>
-				<input
-					type="email"
-					name="email"
-					autoComplete="on"
-					onChange={handleChange}
-					value={email}
-				/>
-			</label>
-			<label>
-				<input
-					type="password"
-					name="password"
-					autoComplete="on"
-					onChange={handleChange}
-					value={password}
-				/>
-			</label>
-			<button type="submit">Log In</button>
-		</form>
+		<Section>
+			<CommonForm onSubmit={handleSubmit}>
+				<CommonHeading>LogIn</CommonHeading>
+				<CommonLabel>
+					<CommonInput
+						type="email"
+						name="email"
+						autoComplete="on"
+						onChange={handleChange}
+						value={email}
+						placeholder="Name"
+					/>
+				</CommonLabel>
+				<CommonLabel>
+					<CommonInput
+						type="password"
+						name="password"
+						autoComplete="on"
+						onChange={handleChange}
+						value={password}
+						placeholder="password"
+					/>
+				</CommonLabel>
+				<CommonBtn type="submit">Log In</CommonBtn>
+			</CommonForm>
+		</Section>
 		// </Formik>
 	);
 };

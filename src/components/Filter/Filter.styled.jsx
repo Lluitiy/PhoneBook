@@ -1,32 +1,9 @@
 import styled from '@emotion/styled';
 
-export const FilterLabel = styled.label`
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	margin-bottom: 15px;
-	gap: 10px;
-	color: #131a35;
-	font-size: 18px;
-	font-weight: 500;
-	transition: 250ms color ease-in-out;
-	:hover,
-	:focus {
-		color: rgba(17, 201, 29, 0.863);
-	}
-`;
-
-export const FilterInput = styled.input`
-	padding: 8px;
-	border-radius: 10px;
-	border: 2px solid transparent;
-	background-color: #131a35;
-	color: #e5f1ff;
-	transition: 250ms border-color ease-in-out;
-	outline: none;
-	:hover,
-	:focus {
-		border: 2px solid rgba(17, 201, 29, 0.863);
-	}
+export const FilterWrapper = styled.div`
+	width: 500px;
+	padding: 64px 16px;
+	background-color: rgba(255, 255, 255, 0.5);
+	margin: 0px auto;
+	border-radius: 20px;
 `;

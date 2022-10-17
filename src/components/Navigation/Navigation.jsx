@@ -1,18 +1,26 @@
-import { NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import AuthSelectors from 'Redux/Auth/AuthSelectors';
+import { NavL, Span } from 'components/AuthNav/AuthNav.styled';
 const Navigation = () => {
 	const isLoggedIn = useSelector(AuthSelectors.getIsLoggedIn);
 	return (
 		<>
 			<nav style={{ display: 'flex', gap: `15px` }}>
-				<NavLink to={'home'} key={'Home'}>
+				<NavL to={'home'} key={'Home'}>
+					<Span></Span>
+					<Span></Span>
+					<Span></Span>
+					<Span></Span>
 					Home
-				</NavLink>
+				</NavL>
 				{isLoggedIn ? (
-					<NavLink to={'contacts'} key={'Contacts'}>
+					<NavL to={'contacts'} key={'Contacts'}>
+						<Span></Span>
+						<Span></Span>
+						<Span></Span>
+						<Span></Span>
 						Contacts
-					</NavLink>
+					</NavL>
 				) : null}
 			</nav>
 		</>

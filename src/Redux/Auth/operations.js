@@ -36,7 +36,7 @@ export const setCurrentUser = createAsyncThunk(
 	async (_, thunkAPI) => {
 		const state = thunkAPI.getState();
 		const persistedToken = state.auth.token;
-		if (persistedToken === null) {
+		if (!persistedToken) {
 			console.log('net tokena');
 			return thunkAPI.rejectWithValue(3);
 		}

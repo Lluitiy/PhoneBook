@@ -3,6 +3,14 @@ import { useState } from 'react';
 // import * as yup from 'yup';
 import { register } from 'Redux/Auth/operations';
 import { useDispatch } from 'react-redux';
+import {
+	CommonBtn,
+	CommonForm,
+	CommonHeading,
+	CommonInput,
+	CommonLabel,
+	Section,
+} from 'components/App/App.styled';
 
 // const schema = yup.object().shape({
 // 	name: yup
@@ -58,36 +66,42 @@ const Register = () => {
 		// 	onSubmit={handleSubmit}
 		// 	validationSchema={schema}
 		// >
-		<form onSubmit={handleSubmit}>
-			<label>
-				<input
-					autoComplete="on"
-					type="text"
-					name="name"
-					onChange={handleChange}
-					value={name}
-				/>
-			</label>
-			<label>
-				<input
-					autoComplete="on"
-					type="email"
-					name="email"
-					onChange={handleChange}
-					value={email}
-				/>
-			</label>
-			<label>
-				<input
-					autoComplete="on"
-					type="password"
-					name="password"
-					onChange={handleChange}
-					value={password}
-				/>
-			</label>
-			<button type="submit">Register</button>
-		</form>
+		<Section>
+			<CommonForm onSubmit={handleSubmit}>
+				<CommonHeading>Rigistrate</CommonHeading>
+				<CommonLabel>
+					<CommonInput
+						autoComplete="on"
+						type="text"
+						name="name"
+						onChange={handleChange}
+						value={name}
+						placeholder="Name"
+					/>
+				</CommonLabel>
+				<CommonLabel>
+					<CommonInput
+						autoComplete="on"
+						type="email"
+						name="email"
+						onChange={handleChange}
+						value={email}
+						placeholder="Email"
+					/>
+				</CommonLabel>
+				<CommonLabel>
+					<CommonInput
+						autoComplete="on"
+						type="password"
+						name="password"
+						onChange={handleChange}
+						value={password}
+						placeholder="Password"
+					/>
+				</CommonLabel>
+				<CommonBtn type="submit">Register</CommonBtn>
+			</CommonForm>
+		</Section>
 		// </Formik>
 	);
 };
