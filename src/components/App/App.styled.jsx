@@ -12,6 +12,10 @@ export const Container = styled.div`
 `;
 
 export const CommonBtn = styled.button`
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 16px;
 	background-color: #0367a6;
 	background-image: linear-gradient(90deg, #0367a6 0%, #008997 74%);
 	border-radius: 20px;
@@ -23,6 +27,28 @@ export const CommonBtn = styled.button`
 	letter-spacing: 0.1rem;
 	padding: 0.9rem 4rem;
 	text-transform: uppercase;
+	transition: transform 80ms ease-in;
+
+	:active {
+		transform: scale(0.95);
+	}
+`;
+
+export const CommonWorkBtn = styled.button`
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #0367a6;
+	background-image: linear-gradient(90deg, #0367a6 0%, #008997 74%);
+	border-radius: 50%;
+	width: 44px;
+	height: 44px;
+	border: 1px solid #0367a6;
+	color: #e9e9e9;
+	cursor: pointer;
+	font-size: 0.8rem;
+	font-weight: bold;
+	padding: 10px;
 	transition: transform 80ms ease-in;
 
 	:active {

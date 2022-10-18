@@ -53,8 +53,8 @@ export const ContactForm = () => {
 			return;
 		}
 		const newContact = {
-			name: values.name,
-			number: values.number,
+			name: values.name.trim(),
+			number: values.number.trim(),
 		};
 		dispatch(addContacts(newContact));
 		resetForm();

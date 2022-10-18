@@ -1,4 +1,4 @@
-import { CommonBtn, Container, Section } from 'components/App/App.styled';
+import { CommonWorkBtn, Container, Section } from 'components/App/App.styled';
 import Modal from 'components/Modal/Modal';
 import Spinner from 'components/Spinner/Spinner';
 import { useState } from 'react';
@@ -8,18 +8,19 @@ import { ContactSelectors } from 'Redux/Contacts/ContactsSelectors';
 import {
 	ContactListList,
 	ContactListItem,
-	// ContactsWrapper,
 	ContactListName,
 	ContactListNumber,
 	Message,
 } from './ContactList.styled';
+import { DeleteIcon, EditIcon } from 'components/Services/Icons/Icons.styled';
 
 export const ContactList = () => {
 	const [showModal, setModal] = useState(false);
-	const [editId, setEditId] = useState(null);
-	const toggleModal = id => {
+	const [user, setUSer] = useState(null);
+
+	const toggleModal = user => {
 		setModal(!showModal);
-		setEditId(id);
+		setUSer(user);
 	};
 	const { contacts, filter } = useSelector(ContactSelectors.getStates);
 
@@ -33,7 +34,7 @@ export const ContactList = () => {
 	return (
 		<Section>
 			<Container>
-				{showModal && <Modal editId={editId} toggleModal={toggleModal} />}
+				{showModal && <Modal user={user} toggleModal={toggleModal} />}
 				{contacts.isLoading ? (
 					<Spinner />
 				) : (
@@ -43,22 +44,22 @@ export const ContactList = () => {
 								<ContactListItem key={id} id={id}>
 									<ContactListName>{name}</ContactListName>
 									<ContactListNumber>{number}</ContactListNumber>
-									<CommonBtn
+									<CommonWorkBtn
 										id={id}
 										type="button"
-										onClick={() => toggleModal(id)}
+										onClick={() => toggleModal({ id, name, number })}
 										disabled={contacts.isLoading}
 									>
-										Edit
-									</CommonBtn>
-									<CommonBtn
+										<EditIcon />
+									</CommonWorkBtn>
+									<CommonWorkBtn
 										id={id}
 										type="button"
 										onClick={() => dispatch(deleteContacts(id))}
 										disabled={contacts.isLoading}
 									>
-										Remove
-									</CommonBtn>
+										<DeleteIcon />
+									</CommonWorkBtn>
 								</ContactListItem>
 							))
 						) : (

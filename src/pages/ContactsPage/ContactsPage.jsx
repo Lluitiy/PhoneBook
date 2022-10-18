@@ -15,7 +15,6 @@ const ContactactsPage = () => {
 		dispatch(getContacts());
 	}, [dispatch]);
 	const isLoading = useSelector(ContactSelectors.getIsLoading);
-	console.log('isLoading', isLoading);
 	return (
 		<>
 			{isLoading ? (
