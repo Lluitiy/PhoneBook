@@ -17,9 +17,14 @@ export const ContactListItem = styled.li`
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	padding: 0.9rem 2rem;
+	font-size: 0.8rem;
+	border-radius: 20px;
+	border-bottom: 2px solid #008997;
+	background-color: rgba(255, 255, 255, 0.7);
 `;
 export const ContactsWrapper = styled.div`
-	display: flex;
+	/* display: flex;
 	align-items: center;
 	flex-wrap: wrap;
 	padding: 0.9rem 2rem;
@@ -28,7 +33,7 @@ export const ContactsWrapper = styled.div`
 	border-bottom: 2px solid #008997;
 	background-color: rgba(255, 255, 255, 0.7);
 
-	width: 300px;
+	width: 300px; */
 `;
 export const ContactListName = styled.p`
 	width: 35%;

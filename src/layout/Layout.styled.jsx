@@ -12,6 +12,6 @@ export const Header = styled.header`
 	justify-content: space-around;
 	align-items: center;
 	padding: 24px;
-	background-color: rgba(255, 255, 255, 0.7);
+	background-color: rgba(255, 255, 255, 0.8);
 `;
 export const Main = styled.main``;

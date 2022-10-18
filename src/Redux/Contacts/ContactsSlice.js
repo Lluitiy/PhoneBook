@@ -3,6 +3,7 @@ import {
 	getContacts,
 	addContacts,
 	deleteContacts,
+	editContact,
 } from 'Redux/Contacts/ContactsOperations';
 
 const initialContacts = {
@@ -43,6 +44,24 @@ const contactSlice = createSlice({
 			contacts.isLoading = false;
 			contacts.error = payload;
 		},
+
+		[editContact.pending]({ contacts }) {
+			contacts.isLoading = true;
+		},
+		[editContact.fulfilled]({ contacts }, { payload }) {
+			contacts.isLoading = false;
+			contacts.error = null;
+			console.log('contacts', contacts.items);
+			console.log('payload', payload);
+			contacts.items = contacts.items.map(contact =>
+				contact.id === payload.id ? payload : contact
+			);
+		},
+		[editContact.rejected]({ contacts }, { payload }) {
+			contacts.isLoading = false;
+			contacts.error = payload;
+		},
+
 		[deleteContacts.pending]({ contacts }) {
 			contacts.isLoading = true;
 		},

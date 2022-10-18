@@ -50,6 +50,8 @@ export const authSlice = createSlice({
 		},
 		[setCurrentUser.fulfilled](state, { payload }) {
 			state.user = payload;
+
+			console.log('payload', payload);
 			state.isLoggedIn = true;
 			state.refresh = true;
 		},
